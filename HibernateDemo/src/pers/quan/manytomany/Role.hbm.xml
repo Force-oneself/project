@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 1 配置类和表对应 
+		class标签
+		name属性：实体类全路径
+		table属性：数据库表名称
+	-->
+	<class name="pers.quan.manytomany.Role" table="t_role">
+		<id name="role_id" column="role_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="role_name" column="role_name"></property>
+		<property name="role_memo" column="role_memo"></property>
+		
+		<!-- 在角色里面表示所有用户，使用set标签 -->
+		<set name="setUser" table="user_role">
+			<!-- 角色在第三张表外键 -->
+			<key column="roleid"></key>
+			<many-to-many class="pers.quan.manytomany.User" column="userid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
