@@ -1,0 +1,70 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+/*label丶input选择器*/
+input {
+	position: relative;
+	background: 0 0;
+	font-size: 16px;
+	border: 0 none;
+	outline-style: none;
+	margin: 12px 0 0 -45px;
+}
+/*登录模块*/
+.login {
+	width: 400px;
+	height: 330px;
+	margin: 0 auto;
+	border: 2px solid #fcfdfab8;
+	border-radius: 10px;
+	z-index: 2;
+	position: relative;
+	background-color: #ffffffe3;
+	top: 130px;
+	left: 260px;
+}
+
+.login .login_form .area {
+	position: relative;
+	margin-top: 20px;
+	width: 65%;
+	height: 40px;
+	border-radius: 10px;
+	border: 1px solid #9f9f9f;
+}
+/*清除图标*/
+.login .login_form .userArea #clear {
+	background-image: url("./images/clear.png");
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	margin-right: 10px;
+	visibility: hidden;
+	cursor: pointer;
+}
+
+.login .login_form .userArea #clear:hover {
+	background-image: url('./images/clear-gay.png');
+}
+
+.errorArea {
+	background-image: url('./images/error.png');
+	background-repeat: no-repeat;
+	width: 60%;
+	margin-top: 5px;
+	text-align: left;
+	padding-left: 20px;
+	color: red;
+}

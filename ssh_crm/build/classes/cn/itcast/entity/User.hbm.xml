@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 1 配置类和表对应 
+		class标签
+		name属性：实体类全路径
+		table属性：数据库表名称
+	-->
+	<class name="cn.itcast.entity.User" table="t_user">
+		<id name="uid" column="uid">
+			<generator class="native"></generator>
+		</id>
+		<property name="username" column="username"></property>
+		<property name="password" column="password"></property>
+		<property name="address" column="address"></property>
+		
+		<!-- 表示多条拜访记录 -->
+		<set name="setUserVisit">
+			<key column="uvid"></key>
+			<one-to-many class="cn.itcast.entity.Visit"/>
+		</set>
+	</class>
+</hibernate-mapping>
+
+
+
+
+

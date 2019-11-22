@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 1 配置类和表对应 
+		class标签
+		name属性：实体类全路径
+		table属性：数据库表名称
+	-->
+	<class name="cn.itcast.entity.Dict" table="t_dict">
+		<id name="did" column="did">
+			<!-- native：如果主键自动增长，类型必须是int类
+				实体类did是string，可以写uuid
+				还有一个值，increment
+			 -->
+			<generator class="increment"></generator>
+		</id>
+		<property name="dname" column="dname"></property>
+		
+		<!-- 之前需要set标签表示所有集合，现在没有需求，不需要写了 -->
+	</class>
+</hibernate-mapping>
+
+
+
+
+

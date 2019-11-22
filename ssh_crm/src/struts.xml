@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<!-- 设置上传文件大小 -->
+	<!-- <constant name="struts.multipart.maxSize" value="2097152"></constant> -->
+	
+	
+	<package name="demo1" extends="struts-default" namespace="/">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="loginsuccess">/index.htm</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		
+		<action name="customer_*" class="customerAction" method="{1}">
+			<!-- 到添加页面 -->
+			<result name="toAddPage">/jsp/customer/add.jsp</result>
+			<!-- 添加之后 -->
+			<result name="add" type="redirectAction">customer_list</result>
+			<!-- 列表页面 -->
+			<result name="list">/jsp/customer/list.jsp</result>
+			<!-- 删除之后 -->
+			<result name="delete" type="redirectAction">customer_list</result>
+			<!-- 修改-到修改页面 -->
+			<result name="showCustomer">/jsp/customer/edit.jsp</result>
+			<!-- 修改之后 -->
+			<result name="update" type="redirectAction">customer_list</result>
+			<!-- 分页到页面 -->
+			<result name="listpage">/jsp/customer/listpage.jsp</result>
+			<!-- 条件查询 -->
+			<result name="listcondition">/jsp/customer/list.jsp</result>
+			<!-- 到查询页面 -->
+			<result name="toSelectCustomerPage">/jsp/select/select.jsp</result>
+			<result name="moreCondition">/jsp/customer/list.jsp</result>
+			<!-- 根据来源统计 -->
+			<result name="countSource">/jsp/customer/listSource.jsp</result>
+			<!-- 根据级别统计 -->
+			<result name="countLevel">/jsp/customer/listLevel.jsp</result>
+		</action>
+		
+		<action name="linkman_*" class="linkManAction" method="{1}">
+			<!-- 到添加页面 -->
+			<result name="toAddPage">/jsp/linkman/add.jsp</result>
+			<result name="addLinkMan" type="redirectAction">linkman_list</result>
+			<!-- 配置input结果 -->
+			<result name="input">/jsp/error.jsp</result>
+			<!-- 联系人列表 -->
+			<result name="list">/jsp/linkman/list.jsp</result>
+			<!-- 到修改页面 -->
+			<result name="showLinkMan">/jsp/linkman/edit.jsp</result>
+			<result name="updateLinkMan" type="redirectAction">linkman_list</result>
+			<!-- 到查询联系人页面 -->
+			<result name="toSelectPage">/jsp/select/linkman.jsp</result>
+			<result name="moreCondition">/jsp/linkman/list.jsp</result>
+		</action>
+		
+		<action name="visit_*" class="visitAction" method="{1}">
+			<result name="toAddPage">/jsp/visit/add.jsp</result>
+			<result name="addVisit">/jsp/success.jsp</result>
+			<!-- 列表 -->
+			<result name="list">/jsp/visit/list.jsp</result>
+		</action>
+	</package>
+
+</struts>
+
+
+
