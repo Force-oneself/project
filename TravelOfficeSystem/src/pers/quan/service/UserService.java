@@ -9,10 +9,7 @@ import pers.quan.model.User;
  * @date 2019年11月10日 下午5:29:57
  *
  */
-public class UserService {
+public interface UserService extends Service<User> {
 
-	public User login(User user) {
-		return null;
-	}
-
+	User login(User user);
 }

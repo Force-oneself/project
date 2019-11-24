@@ -11,4 +11,5 @@ import pers.quan.model.User;
  */
 public interface UserDao extends Dao<User> {
 
+	User login(User user);
 }

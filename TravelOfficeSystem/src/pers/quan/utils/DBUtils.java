@@ -39,18 +39,11 @@ public class DBUtils {
 			if (connection != null && !connection.isClosed()) {
 				return connection;
 			}
-			// 加载驱动
-			System.out.println("加载驱动中......");
 			Class.forName(driver);
-			System.out.println("加载驱动成功");
-			// 打开链接
 			connection = DriverManager.getConnection(url, user, password);
-			System.out.println("连接数据库成功");
 		} catch (ClassNotFoundException e) {
-			System.out.println("加载驱动失败!");
 			e.printStackTrace();
 		} catch (SQLException e) {
-			System.out.println("数据库连接失败!");
 			e.printStackTrace();
 		}
 		return connection;
